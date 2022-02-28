@@ -1,0 +1,115 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-02-25 15:38:38 #1 store] 
+Database '/Users/mateobacchi/git/Bets21_Met/src/main/resources/bets.temp' is opened by 10499@MacBook-Pro-de-Mateo.local
+
+[2022-02-25 15:38:38 #2 type.registry] 
+New type domain.Question
+
+[2022-02-25 15:38:38 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-02-25 15:38:38 #4 type.registry] 
+New type domain.Event
+
+[2022-02-25 15:38:38 #5 type] 
+Type domain.Event is not enhanced.
+
+[2022-02-25 15:38:38 #6 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-02-25 15:38:38 #7 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-02-25 15:43:41 #1 store] 
+Database '/Users/mateobacchi/git/Bets21_Met/src/main/resources/bets.temp' is opened by 10536@MacBook-Pro-de-Mateo.local
+
+[2022-02-25 15:43:41 #2 type.registry] 
+New type domain.Question
+
+[2022-02-25 15:43:41 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-02-25 15:43:42 #4 type.registry] 
+New type domain.Event
+
+[2022-02-25 15:43:42 #5 type] 
+Type domain.Event is not enhanced.
+
+[2022-02-25 15:43:42 #6 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-02-25 15:43:42 #7 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-02-25 15:45:14 #1 store] 
+Database '/Users/mateobacchi/git/Bets21_Met/src/main/resources/bets.temp' is opened by 10550@MacBook-Pro-de-Mateo.local
+
+[2022-02-25 15:45:14 #2 type.registry] 
+New type domain.Question
+
+[2022-02-25 15:45:14 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-02-25 15:45:14 #4 type.registry] 
+New type domain.Event
+
+[2022-02-25 15:45:14 #5 type] 
+Type domain.Event is not enhanced.
+
+[2022-02-25 15:45:14 #6 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-02-25 15:45:14 #7 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-02-25 15:45:52 #1 store] 
+Database '/Users/mateobacchi/git/Bets21_Met/src/main/resources/bets.temp' is opened by 10554@MacBook-Pro-de-Mateo.local
+
+[2022-02-25 15:45:53 #2 type.registry] 
+New type domain.Question
+
+[2022-02-25 15:45:53 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-02-25 15:45:53 #4 type.registry] 
+New type domain.Event
+
+[2022-02-25 15:45:53 #5 type] 
+Type domain.Event is not enhanced.
+
+[2022-02-25 15:45:53 #6 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-02-25 15:45:53 #7 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-02-25 15:48:33 #1 store] 
+Database '/Users/mateobacchi/git/Bets21_Met/src/main/resources/bets.temp' is opened by 10570@MacBook-Pro-de-Mateo.local
+
+[2022-02-25 15:48:33 #2 type.registry] 
+New type domain.Question
+
+[2022-02-25 15:48:33 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-02-25 15:48:33 #4 type.registry] 
+New type domain.Event
+
+[2022-02-25 15:48:33 #5 type] 
+Type domain.Event is not enhanced.
+
+[2022-02-25 15:48:33 #6 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-02-25 15:48:33 #7 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
