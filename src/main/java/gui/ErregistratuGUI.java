@@ -13,6 +13,7 @@ import javax.swing.border.EmptyBorder;
 
 import businessLogic.BLFacade;
 import java.awt.event.ActionListener;
+import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
 
 public class ErregistratuGUI extends JFrame{
@@ -55,102 +56,106 @@ public class ErregistratuGUI extends JFrame{
 	 * Create the frame.
 	 */
 	public ErregistratuGUI() {
-		setTitle("Register: New User");
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle(ResourceBundle.getBundle("Etiquetas").getString("Register"));
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Username:");
-		lblNewLabel.setBounds(22, 52, 67, 14);
+		JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Username"));
+		lblNewLabel.setBounds(6, 52, 153, 14);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Password:");
-		lblNewLabel_1.setBounds(22, 110, 67, 14);
+		JLabel lblNewLabel_1 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Password"));
+		
+
+		lblNewLabel_1.setBounds(6, 110, 153, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(136, 134, 138, 20);
+		passwordField.setBounds(158, 134, 162, 20);
 		contentPane.add(passwordField);
 		
 		textField = new JTextField();
-		textField.setBounds(115, 49, 162, 20);
+		textField.setBounds(158, 49, 162, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("User");
-		rdbtnNewRadioButton.setBounds(204, 235, 103, 23);
+		JRadioButton rdbtnNewRadioButton = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("User"));
+		rdbtnNewRadioButton.setBounds(204, 235, 116, 23);
 		contentPane.add(rdbtnNewRadioButton);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Admin");
-		rdbtnNewRadioButton_1.setBounds(57, 235, 103, 23);
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("Admin"));
+		rdbtnNewRadioButton_1.setBounds(57, 235, 135, 23);
 		contentPane.add(rdbtnNewRadioButton_1);
 		
-		JButton btnNewButton = new JButton("Register");
+		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Register"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				JFrame a = new LoginGUI();
+
+				a.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(344, 249, 89, 23);
+		btnNewButton.setBounds(317, 249, 127, 23);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_2 = new JLabel("Repeat Password:");
-		lblNewLabel_2.setBounds(22, 136, 132, 16);
+		JLabel lblNewLabel_2 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("RepeatPassword"));
+		lblNewLabel_2.setBounds(6, 136, 153, 16);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Email adress:");
-		lblNewLabel_3.setBounds(22, 82, 111, 16);
+		JLabel lblNewLabel_3 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Emailaddress"));
+		lblNewLabel_3.setBounds(6, 82, 153, 16);
 		contentPane.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("Name:");
-		lblNewLabel_4.setBounds(22, 24, 61, 16);
+		JLabel lblNewLabel_4 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Name"));
+		lblNewLabel_4.setBounds(6, 24, 153, 16);
 		contentPane.add(lblNewLabel_4);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(115, 17, 162, 20);
+		textField_1.setBounds(158, 22, 162, 20);
 		contentPane.add(textField_1);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(115, 80, 162, 20);
+		textField_2.setBounds(158, 80, 162, 20);
 		contentPane.add(textField_2);
 		
 		passwordField_1 = new JPasswordField();
-		passwordField_1.setBounds(115, 107, 162, 20);
+		passwordField_1.setBounds(158, 107, 162, 20);
 		contentPane.add(passwordField_1);
 		
-		JLabel lblNewLabel_5 = new JLabel("BirthDay:");
-		lblNewLabel_5.setBounds(22, 164, 61, 16);
+		JLabel lblNewLabel_5 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("BirthDay"));
+		lblNewLabel_5.setBounds(6, 164, 127, 16);
 		contentPane.add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_6 = new JLabel("Day:");
-		lblNewLabel_6.setBounds(22, 194, 38, 14);
+		JLabel lblNewLabel_6 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Day"));
+		lblNewLabel_6.setBounds(6, 192, 79, 14);
 		contentPane.add(lblNewLabel_6);
 		
-		JLabel lblNewLabel_6_1 = new JLabel("Month:");
-		lblNewLabel_6_1.setBounds(127, 194, 61, 16);
+		JLabel lblNewLabel_6_1 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Month"));
+		lblNewLabel_6_1.setBounds(147, 191, 73, 16);
 		contentPane.add(lblNewLabel_6_1);
 		
-		JLabel lblNewLabel_6_2 = new JLabel("Year:");
-		lblNewLabel_6_2.setBounds(245, 194, 61, 16);
+		JLabel lblNewLabel_6_2 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Year"));
+		lblNewLabel_6_2.setBounds(287, 191, 79, 16);
 		contentPane.add(lblNewLabel_6_2);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
-		textField_3.setBounds(57, 189, 67, 24);
+		textField_3.setBounds(81, 192, 67, 24);
 		contentPane.add(textField_3);
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
-		textField_4.setBounds(173, 189, 67, 24);
+		textField_4.setBounds(221, 189, 67, 20);
 		contentPane.add(textField_4);
 		
 		textField_5 = new JTextField();
 		textField_5.setColumns(10);
-		textField_5.setBounds(280, 188, 67, 24);
+		textField_5.setBounds(361, 187, 67, 24);
 		contentPane.add(textField_5);
 	}
 }

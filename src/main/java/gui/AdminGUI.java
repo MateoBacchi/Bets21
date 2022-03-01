@@ -1,30 +1,34 @@
 package gui;
 
-import java.awt.Color;
-import java.awt.Font;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import java.util.Locale;
-import java.util.ResourceBundle;
+/**
+ * @author Software Engineering teachers
+ */
 
 
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 
+import domain.Event;
 import businessLogic.BLFacade;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Locale;
+import java.util.ResourceBundle;
+import java.util.Vector;
 
-public class EzErregistratuGUI extends JFrame {
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+public class AdminGUI extends JFrame {
+	
 	private static final long serialVersionUID = 1L;
 
 	private JPanel jContentPane = null;
+	private JButton jButtonCreateQuery = null;
 	private JButton jButtonQueryQueries = null;
 
     private static BLFacade appFacadeInterface;
@@ -40,7 +44,6 @@ public class EzErregistratuGUI extends JFrame {
 	private JRadioButton rdbtnNewRadioButton;
 	private JRadioButton rdbtnNewRadioButton_1;
 	private JRadioButton rdbtnNewRadioButton_2;
-	private JPanel panel;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JButton btnNewButton;
 	private JButton btnNewButton_1;
@@ -48,13 +51,24 @@ public class EzErregistratuGUI extends JFrame {
 	/**
 	 * This is the default constructor
 	 */
-	public EzErregistratuGUI() {
+	public AdminGUI() {
 		super();
 		
-	
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				try {
+					//if (ConfigXML.getInstance().isBusinessLogicLocal()) facade.close();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					System.out.println("Error: "+e1.toString()+" , probably problems with Business Logic or Database");
+				}
+				System.exit(1);
+			}
+		});
 
 		initialize();
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	
@@ -65,10 +79,10 @@ public class EzErregistratuGUI extends JFrame {
 	 * @return void
 	 */
 	private void initialize() {
-		
+		// this.setSize(271, 295);
 		this.setSize(495, 290);
 		this.setContentPane(getJContentPane());
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("MainTitle"));
+		this.setTitle("adminGUI");
 	}
 
 	/**
@@ -81,12 +95,36 @@ public class EzErregistratuGUI extends JFrame {
 			jContentPane = new JPanel();
 			jContentPane.setLayout(null);
 			jContentPane.add(getLblNewLabel());
-			jContentPane.add(getBoton3());
+			jContentPane.add(getBoton2());
 			jContentPane.add(getBtnNewButton());
+			jContentPane.add(getBoton3());
 			jContentPane.add(getBtnNewButton_1());
-			jContentPane.add(getPanel());
+			jContentPane.add(getRdbtnNewRadioButton());
+			jContentPane.add(getRdbtnNewRadioButton_2());
+			jContentPane.add(getRdbtnNewRadioButton_1());
 		}
 		return jContentPane;
+	}
+
+
+	/**
+	 * This method initializes boton1
+	 * 
+	 * @return javax.swing.JButton
+	 */
+	private JButton getBoton2() {
+		if (jButtonCreateQuery == null) {
+			jButtonCreateQuery = new JButton();
+			jButtonCreateQuery.setBounds(0, 67, 247, 67);
+			jButtonCreateQuery.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateQuery"));
+			jButtonCreateQuery.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					JFrame a = new CreateQuestionGUI(new Vector<Event>());
+					a.setVisible(true);
+				}
+			});
+		}
+		return jButtonCreateQuery;
 	}
 	
 	/**
@@ -97,7 +135,7 @@ public class EzErregistratuGUI extends JFrame {
 	private JButton getBoton3() {
 		if (jButtonQueryQueries == null) {
 			jButtonQueryQueries = new JButton();
-			jButtonQueryQueries.setBounds(0, 67, 494, 67);
+			jButtonQueryQueries.setBounds(247, 67, 247, 67);
 			jButtonQueryQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
 			jButtonQueryQueries.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -124,6 +162,7 @@ public class EzErregistratuGUI extends JFrame {
 	private JRadioButton getRdbtnNewRadioButton() {
 		if (rdbtnNewRadioButton == null) {
 			rdbtnNewRadioButton = new JRadioButton("English");
+			rdbtnNewRadioButton.setBounds(79, 213, 78, 23);
 			rdbtnNewRadioButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					Locale.setDefault(new Locale("en"));
@@ -137,6 +176,7 @@ public class EzErregistratuGUI extends JFrame {
 	private JRadioButton getRdbtnNewRadioButton_1() {
 		if (rdbtnNewRadioButton_1 == null) {
 			rdbtnNewRadioButton_1 = new JRadioButton("Euskara");
+			rdbtnNewRadioButton_1.setBounds(322, 213, 81, 23);
 			rdbtnNewRadioButton_1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					Locale.setDefault(new Locale("eus"));
@@ -150,6 +190,7 @@ public class EzErregistratuGUI extends JFrame {
 	private JRadioButton getRdbtnNewRadioButton_2() {
 		if (rdbtnNewRadioButton_2 == null) {
 			rdbtnNewRadioButton_2 = new JRadioButton("Castellano");
+			rdbtnNewRadioButton_2.setBounds(196, 213, 98, 23);
 			rdbtnNewRadioButton_2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					Locale.setDefault(new Locale("es"));
@@ -161,55 +202,31 @@ public class EzErregistratuGUI extends JFrame {
 		}
 		return rdbtnNewRadioButton_2;
 	}
-	private JPanel getPanel() {
-		if (panel == null) {
-			panel = new JPanel();
-			panel.setBounds(0, 201, 494, 67);
-			panel.add(getRdbtnNewRadioButton_1());
-			panel.add(getRdbtnNewRadioButton());
-			panel.add(getRdbtnNewRadioButton_2());
-		}
-		return panel;
-	}
 	
 	private void redibujar() {
 		jLabelSelectOption.setText(ResourceBundle.getBundle("Etiquetas").getString("SelectOption"));
 		jButtonQueryQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
-		btnNewButton.setText(ResourceBundle.getBundle("Etiquetas").getString("Register")); 
-		btnNewButton_1.setText(ResourceBundle.getBundle("Etiquetas").getString("Login")); 
-
+		jButtonCreateQuery.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateQuery"));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("MainTitle"));
 	}
 	
 	private JButton getBtnNewButton() {
 		if (btnNewButton == null) {
-			btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Register")); 
-			btnNewButton.setBounds(247, 134, 247, 67);
+			btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("AdminGUI.btnNewButton.text"));
 			btnNewButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					JFrame a = new ErregistratuGUI();
-
-					a.setVisible(true);
 				}
 			});
+			btnNewButton.setBounds(0, 134, 247, 67);
 		}
 		return btnNewButton;
 	}
 	private JButton getBtnNewButton_1() {
 		if (btnNewButton_1 == null) {
-			btnNewButton_1 = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Login")); 
-			btnNewButton_1.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					JFrame a = new LoginGUI();
-
-					a.setVisible(true);
-				}
-			});
-			btnNewButton_1.setBounds(0, 134, 247, 67);
+			btnNewButton_1 = new JButton(ResourceBundle.getBundle("Etiquetas").getString("AdminGUI.btnNewButton_1.text"));
+			btnNewButton_1.setBounds(247, 134, 247, 67);
 		}
 		return btnNewButton_1;
 	}
 } // @jve:decl-index=0:visual-constraint="0,0"
-
-
 
