@@ -207,14 +207,18 @@ public class AdminGUI extends JFrame {
 		jLabelSelectOption.setText(ResourceBundle.getBundle("Etiquetas").getString("SelectOption"));
 		jButtonQueryQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
 		jButtonCreateQuery.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateQuery"));
+		btnNewButton.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateOdd"));
+		btnNewButton_1.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateEvent"));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("MainTitle"));
 	}
 	
 	private JButton getBtnNewButton() {
 		if (btnNewButton == null) {
-			btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("AdminGUI.btnNewButton.text"));
+			btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateOdd"));
 			btnNewButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					JFrame a = new KuotakGUI();
+					a.setVisible(true);
 				}
 			});
 			btnNewButton.setBounds(0, 134, 247, 67);
@@ -223,7 +227,7 @@ public class AdminGUI extends JFrame {
 	}
 	private JButton getBtnNewButton_1() {
 		if (btnNewButton_1 == null) {
-			btnNewButton_1 = new JButton(ResourceBundle.getBundle("Etiquetas").getString("AdminGUI.btnNewButton_1.text"));
+			btnNewButton_1 = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateEvent"));
 			btnNewButton_1.setBounds(247, 134, 247, 67);
 		}
 		return btnNewButton_1;

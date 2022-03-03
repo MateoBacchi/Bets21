@@ -110,10 +110,10 @@ public class UserGUI extends JFrame {
 	private JButton getBoton2() {
 		if (jButtonCreateQuery == null) {
 			jButtonCreateQuery = new JButton();
-			jButtonCreateQuery.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateQuery"));
+			jButtonCreateQuery.setText(ResourceBundle.getBundle("Etiquetas").getString("Bet"));
 			jButtonCreateQuery.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
-					JFrame a = new CreateQuestionGUI(new Vector<Event>());
+					JFrame a = new BetGUI();
 					a.setVisible(true);
 				}
 			});

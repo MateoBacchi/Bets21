@@ -12,7 +12,7 @@ import javax.swing.border.EmptyBorder;
 
 
 
-public class KuotakGUI extends JFrame {
+public class BetGUI extends JFrame {
 
 	private JPanel contentPane;
 	
@@ -37,9 +37,8 @@ public class KuotakGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public KuotakGUI() {
-		setTitle(ResourceBundle.getBundle("Etiquetas").getString("CreateOdd")); //$NON-NLS-1$ //$NON-NLS-2$
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public BetGUI() {
+		setTitle(ResourceBundle.getBundle("Etiquetas").getString("Bet")); //$NON-NLS-1$ //$NON-NLS-2$
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
